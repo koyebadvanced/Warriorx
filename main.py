@@ -582,28 +582,37 @@ async def help_button(client, callback_query):
   first_name = callback_query.from_user.first_name
   keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]])
   caption = (
-    f"💥 BOTS COMMANDS\n"
-    f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-    f"📌 Main Features:\n\n"
-    f"➥ /start – Bot Status Check\n"
-    f"➥ /drm – Extract from .txt (Auto)\n"
-    f"➥ /y2t – YouTube → .txt Converter\n"
-    f"➥ /ytm – YT .txt → .mp3 downloader\n"
-    f"➥ /yt2m – YT link → .mp3 downloader\n"
-    f"➥ /t2t – Text → .txt Generator\n"
-    f"➥ /stop – Cancel Running Task\n"
-    f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-    f"⚙️ Tools & Settings:\n\n"
-    f"➥ /cookies – Update YT Cookies\n"
-    f"➥ /id – Get Chat/User ID\n"
-    f"➥ /info – User Details\n"
-    f"➥ /logs – View Bot Activity\n"
-    f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-    f"💡 Note:\n"
-    f"• Send any link for auto-extraction\n"
-    f"• Supports batch processing ✅\n"
-    f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-    f"💻 Made by: [𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros)\n"
+" ═════𓆩🍧𓆪═════╗\n"
+"🦚  𝐁𝐎𝐓 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒  🦚\n"
+"╚═════𓆩🍧𓆪═════╝\n\n"
+
+"🧩 𝐁𝐚𝐬𝐢𝐜 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬:\n\n"  
+"• /start — 𝐁𝐨𝐭 𝐒𝐭𝐚𝐭𝐮𝐬 𝐂𝐡𝐞𝐜𝐤\n"  
+"• /drm — 𝐄𝐱𝐭𝐫𝐚𝐜𝐭 𝐟𝐫𝐨𝐦 .𝐭𝐱𝐭 (𝐀𝐮𝐭𝐨)\n"  
+"• /stop — 𝐂𝐚𝐧𝐜𝐞𝐥 𝐑𝐮𝐧𝐧𝐢𝐧𝐠 𝐓𝐚𝐬𝐤\n\n"  
+
+"🏝 𝐕𝐢𝐝𝐞𝐨 𝐓𝐨𝐨𝐥𝐬:\n\n"  
+"• /y2t — 𝐘𝐓 ➜ 𝐓𝐞𝐱𝐭 𝐂𝐨𝐧𝐯𝐞𝐫𝐭𝐞𝐫\n"  
+"• /ytm — .𝐭𝐱𝐭 ➜ .𝐦𝐩𝟑 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫\n"  
+"• /yt2m — 𝐘𝐓 𝐋𝐢𝐧𝐤 ➜ .𝐦𝐩𝟑\n"  
+"• /t2t — 𝐓𝐞𝐱𝐭 ➜ .𝐭𝐱𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫\n"  
+"• /cookies — 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐨𝐨𝐤𝐢𝐞𝐬\n\n"  
+
+"💠 𝐔𝐬𝐞𝐫 𝐓𝐨𝐨𝐥𝐬:\n\n"  
+"• /id — 𝐘𝐨𝐮𝐫 𝐂𝐡𝐚𝐭 / 𝐔𝐬𝐞𝐫 𝐈𝐃\n"  
+"• /info — 𝐔𝐬𝐞𝐫 𝐃𝐞𝐭𝐚𝐢𝐥𝐬\n"  
+"• /logs — 𝐕𝐢𝐞𝐰 𝐁𝐨𝐭 𝐋𝐨𝐠𝐬\n\n"  
+
+"🎄 𝐀𝐝𝐦𝐢𝐧 𝐌𝐨𝐝𝐞:\n\n"  
+"• /addauth /rmauth /users\n\n"  
+
+"💡 𝐍𝐨𝐭𝐞:\n"  
+"• 𝐉𝐮𝐬𝐭 𝐬𝐞𝐧𝐝 𝐚 𝐘𝐓 𝐥𝐢𝐧𝐤 — 𝐀𝐮𝐭𝐨 𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐢𝐨𝐧 ⚡\n"  
+"• 𝐒𝐮𝐩𝐩𝐨𝐫𝐭𝐬 𝐁𝐚𝐭𝐜𝐡 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 ✅\n\n"  
+
+"╰━━━━━━━━━━━━━━━━━━━━━━━╯\n"  
+"💎 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲: [🌠 𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros)"
+
 )
     
   await callback_query.message.edit_media(
