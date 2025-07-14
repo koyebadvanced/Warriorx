@@ -642,29 +642,37 @@ async def help_button(client, callback_query):
 
 @bot.on_callback_query(filters.regex("upgrade_command"))
 async def upgrade_button(client, callback_query):
-  user_id = callback_query.from_user.id
-  first_name = callback_query.from_user.first_name
-  keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]])
-  caption = (
-           f" 🎉 Welcome {first_name} to DRM Bot! 🎉\n\n"
-           f"You can have access to download all Non-DRM+AES Encrypted URLs 🔐 including\n\n"
-           f"<blockquote>• 📚 Appx Zip+Encrypted Url\n"
-           f"• 🎓 Classplus DRM+ NDRM\n"
-           f"• 🧑‍🏫 PhysicsWallah DRM\n"
-           f"• 📚 CareerWill + PDF\n"
-           f"• 🎓 Khan GS\n"
-           f"• 🎓 Study Iq DRM\n"
-           f"• 🚀 APPX + APPX Enc PDF\n"
-           f"• 🎓 Vimeo Protection\n"
-           f"• 🎓 Brightcove Protection\n"
-           f"• 🎓 Visionias Protection\n"
-           f"• 🎓 Zoom Video\n"
-           f"• 🎓 Utkarsh Protection(Video + PDF)\n"
-           f"• 🎓 All Non DRM+AES Encrypted URLs\n"
-           f"• 🎓 MPD URLs if the key is known (e.g., Mpd_url?key=key XX:XX)</blockquote>\n\n"
-           f"<b>💵 Monthly Plan: free</b>\n\n"
-           f"If you want to buy membership of the bot, feel free to contact the Bot Admin.\n"
-    )  
+    user_id = callback_query.from_user.id
+    first_name = callback_query.from_user.first_name
+
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("📞 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐀𝐝𝐦𝐢𝐧", url="https://t.me/staystrongbros")],
+        [InlineKeyboardButton("🔙 𝐁𝐚𝐜𝐤 𝐓𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="back_to_main_menu")]
+    ])
+
+    caption = (
+        "🛸⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆🛸\n"
+        f"     💠 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 {first_name} 𝗧𝗢 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨 🌠\n"
+        "🛸⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆🛸\n\n"
+
+        "💠 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗦𝗲𝗿𝘃𝗶𝗰𝗲𝘀:\n\n"
+        "📚     𝗔𝗣𝗣𝗫 𝗭𝗶𝗽 𝗩𝟮 𝗦𝘂𝗽𝗽𝗼𝗿𝘁𝗲𝗱 (𝗣𝗗𝗙)\n"
+        "🎓     𝗖𝗹𝗮𝘀𝘀𝗣𝗹𝘂𝘀 𝗗𝗥𝗠 / 𝗡𝗗𝗥𝗠\n"
+        "🧑‍🏫     𝗣𝗵𝘆𝘀𝗶𝗰𝘀𝗪𝗮𝗹𝗹𝗮𝗵 (🔸 𝗣𝗮𝘂𝘀𝗲𝗱)\n"
+        "📘     𝗖𝗮𝗿𝗲𝗲𝗿𝗪𝗶𝗹𝗹 𝗖𝗼𝘂𝗿𝘀𝗲𝘀\n"
+        "📰     𝗞𝗵𝗮𝗻 𝗦𝗶𝗿 𝗠𝗮𝘁𝗲𝗿𝗶𝗮𝗹𝘀\n"
+        "🎓     𝗦𝘁𝘂𝗱𝘆𝗜𝗤 𝗖𝗼𝗻𝘁𝗲𝗻𝘁\n"
+        "🚀     𝗔𝗽𝗽𝗫 + 𝗗𝗲𝗰 𝗣𝗗𝗙 𝗨𝗻𝗹𝗼𝗰𝗸𝘀\n"
+        "💻     𝗩𝗶𝗱𝗲𝗼 𝗟𝗲𝗰𝘁𝘂𝗿𝗲𝘀 (𝗕𝗿𝗶𝗴𝗵𝘁𝗰𝗼𝘃𝗲 / 𝗩𝗶𝗺𝗲𝗼)\n"
+        "📘     𝗩𝗶𝘀𝗶𝗼𝗻𝗜𝗔𝗦 𝗣𝗗𝗙𝘀\n"
+        "📝     𝗭𝗼𝗼𝗺 𝗩𝗶𝗱𝗲𝗼 𝗔𝗿𝗰𝗵𝗶𝘃𝗲𝘀\n"
+        "📚     𝗕𝘆𝗷𝘂'𝘀 𝗖𝗼𝘂𝗿𝘀𝗲𝘀 (𝗣𝗗𝗙 / 𝗩𝗶𝗱𝗲𝗼)\n"
+        "🎓     𝗨𝗻𝗮𝗰𝗮𝗱𝗲𝗺𝘆 𝗣𝗹𝘂𝘀 𝗟𝗲𝗰𝘁𝘂𝗿𝗲𝘀\n\n"
+
+        "💵 𝗠𝗼𝗻𝘁𝗵𝗹𝘆 𝗣𝗹𝗮𝗻: 𝗙𝗥𝗘𝗘 🎁\n\n"
+        "💬 𝗙𝗼𝗿 𝗔𝗰𝗰𝗲𝘀𝘀 / 𝗣𝗹𝗮𝗻𝘀 / 𝗦𝘂𝗽𝗽𝗼𝗿𝘁:\n"
+        "𝗖𝗼𝗻𝘁𝗮𝗰𝘁 𝘁𝗵𝗲 𝗔𝗱𝗺𝗶𝗻 𝘂𝘀𝗶𝗻𝗴 𝘁𝗵𝗲 𝗯𝘂𝘁𝘁𝗼𝗻 𝗯𝗲𝗹𝗼𝘄 👇"
+    )
     
   await callback_query.message.edit_media(
     InputMediaPhoto(
