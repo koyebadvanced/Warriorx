@@ -569,7 +569,7 @@ async def back_to_main_menu(client, callback_query):
     
     await callback_query.message.edit_media(
       InputMediaPhoto(
-        media="https://i.postimg.cc/7LJRmJ4Y/wallhaven-85xj7y.jpg",
+        media="https://i.postimg.cc/15cYsyTm/c78f47eb1be7788ebe3f60079d6cbe40.jpg",
         caption=caption
       ),
       reply_markup=keyboard
