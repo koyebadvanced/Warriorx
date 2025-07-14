@@ -537,9 +537,9 @@ async def start(bot, m: Message):
         ])
         
         await start_message.edit_text(
-            f"👋🏻 Welcome {m.from_user.first_name} \n\n" +
+            f"🌟 Welcome {m.from_user.first_name} \n\n" +
             f"💎 Great! You are a premium member!\n"
-            f"🧭 Use button : __USER CMD__ to get started \n\n"
+            f"🧭 Use button : USER CMD to get started \n\n"
             f"If you face any problem contact -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard
         )
     else:
