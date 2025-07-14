@@ -646,14 +646,14 @@ async def upgrade_button(client, callback_query):
     first_name = callback_query.from_user.first_name
 
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("📞 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐀𝐝𝐦𝐢𝐧", url="https://t.me/staystrongbros")],
-        [InlineKeyboardButton("🔙 𝐁𝐚𝐜𝐤 𝐓𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="back_to_main_menu")]
+        [InlineKeyboardButton("📞 Contact Admin", url="https://t.me/staystrongbros")],
+        [InlineKeyboardButton("🔙 Back To Main Menu", callback_data="back_to_main_menu")]
     ])
 
     caption = (
-        "🛸⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆🛸\n"
+        "🛸**************************🛸\n"
         f"     💠 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 {first_name} 𝗧𝗢 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨 🌠\n"
-        "🛸⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆🛸\n\n"
+        "🛸**************************🛸\n\n"
 
         "💠 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗦𝗲𝗿𝘃𝗶𝗰𝗲𝘀:\n\n"
         "📚     𝗔𝗣𝗣𝗫 𝗭𝗶𝗽 𝗩𝟮 𝗦𝘂𝗽𝗽𝗼𝗿𝘁𝗲𝗱 (𝗣𝗗𝗙)\n"
@@ -668,18 +668,18 @@ async def upgrade_button(client, callback_query):
         "📝     𝗭𝗼𝗼𝗺 𝗩𝗶𝗱𝗲𝗼 𝗔𝗿𝗰𝗵𝗶𝘃𝗲𝘀\n"
         "📚     𝗕𝘆𝗷𝘂'𝘀 𝗖𝗼𝘂𝗿𝘀𝗲𝘀 (𝗣𝗗𝗙 / 𝗩𝗶𝗱𝗲𝗼)\n"
         "🎓     𝗨𝗻𝗮𝗰𝗮𝗱𝗲𝗺𝘆 𝗣𝗹𝘂𝘀 𝗟𝗲𝗰𝘁𝘂𝗿𝗲𝘀\n\n"
-
         "💵 𝗠𝗼𝗻𝘁𝗵𝗹𝘆 𝗣𝗹𝗮𝗻: 𝗙𝗥𝗘𝗘 🎁\n\n"
         "💬 𝗙𝗼𝗿 𝗔𝗰𝗰𝗲𝘀𝘀 / 𝗣𝗹𝗮𝗻𝘀 / 𝗦𝘂𝗽𝗽𝗼𝗿𝘁:\n"
         "𝗖𝗼𝗻𝘁𝗮𝗰𝘁 𝘁𝗵𝗲 𝗔𝗱𝗺𝗶𝗻 𝘂𝘀𝗶𝗻𝗴 𝘁𝗵𝗲 𝗯𝘂𝘁𝘁𝗼𝗻 𝗯𝗲𝗹𝗼𝘄 👇"
     )
-    
-  await callback_query.message.edit_media(
-    InputMediaPhoto(
-      media="https://i.postimg.cc/rmBRxbJw/wallhaven-r7vo87.png",
-      caption=caption
-    ),
-    reply_markup=keyboard
+
+    await callback_query.message.edit_media(
+        InputMediaPhoto(
+            media="https://i.postimg.cc/rmBRxbJw/wallhaven-r7vo87.png",
+            caption=caption,
+            parse_mode="HTML"
+        ),
+        reply_markup=keyboard
     )
 
 @bot.on_callback_query(filters.regex("feat_command"))
