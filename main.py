@@ -617,7 +617,7 @@ async def help_button(client, callback_query):
     
   await callback_query.message.edit_media(
     InputMediaPhoto(
-      media="https://i.postimg.cc/NGDd8kXk/wallhaven-eole18.png",
+      media="https://i.postimg.cc/15cYsyTm/c78f47eb1be7788ebe3f60079d6cbe40.jpg",
       caption=caption
     ),
     reply_markup=keyboard
