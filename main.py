@@ -540,7 +540,7 @@ async def start(bot, m: Message):
     f"🌟 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 {m.from_user.first_name} \n\n"
     f"💎 𝗚𝗿𝗲𝗮𝘁! 𝗬𝗼𝘂 𝗮𝗿𝗲 𝗮 𝗽𝗿𝗲𝗺𝗶𝘂𝗺 𝗺𝗲𝗺𝗯𝗲𝗿!\n"
     f"🧭 𝗨𝘀𝗲 𝗯𝘂𝘁𝘁𝗼𝗻 : 𝗨𝗦𝗘𝗥 𝗖𝗠𝗗 𝘁𝗼 𝗴𝗲𝘁 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 \n\n"
-            f"If you face any problem contact -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard
+            f" 𝗜𝗳 𝘆𝗼𝘂 𝗳𝗮𝗰𝗲 𝗮𝗻𝘆 𝗽𝗿𝗼𝗯𝗹𝗲𝗺 𝗰𝗼𝗻𝘁𝗮𝗰𝘁 -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard
         )
     else:
         await asyncio.sleep(2)
