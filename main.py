@@ -627,20 +627,17 @@ async def help_button(client, callback_query):
 async def help_button(client, callback_query):
   user_id = callback_query.from_user.id
   first_name = callback_query.from_user.first_name
-  keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]])
+  keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu",  callback_data="back_to_main_menu")]])
   caption = (
-        f"👤 𝐁𝐨𝐭 𝐎𝐰𝐧𝐞𝐫 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬\n\n" 
-        f"➥ /addauth xxxx – Add User ID\n" 
-        f"➥ /rmauth xxxx – Remove User ID\n"  
-        f"➥ /users – Total User List\n"  
-        f"➥ /broadcast – For Broadcasting\n"  
-        f"➥ /broadusers – All Broadcasting Users\n"  
-        f"➥ /resat – Resat Bot\n"
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"  
-        f"╭────────⊰◆⊱────────╮\n"   
-        f" ➠ 𝐌𝐚𝐝𝐞 𝐁𝐲 : {CREDIT} 💻\n"
-        f"╰────────⊰◆⊱────────╯\n"
-  )
+    "╔═══❖ 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ❖═══╗\n\n"
+    "📥 /addauth [𝐈𝐃]   – 𝐆𝐫𝐚𝐧𝐭 𝐀𝐝𝐦𝐢𝐧 𝐑𝐨𝐥𝐞\n"
+    "🗑️ /rmauth [𝐈𝐃]    – 𝐑𝐞𝐦𝐨𝐯𝐞 𝐀𝐝𝐦𝐢𝐧 𝐔𝐬𝐞𝐫\n"
+    "👥 /users          – 𝐀𝐥𝐥 𝐁𝐨𝐭 𝐔𝐬𝐞𝐫𝐬\n"
+    "📢 /broadcast      – 𝐒𝐞𝐧𝐝 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐓𝐨 𝐀𝐥𝐥\n"
+    "📊 /broadusers     – 𝐋𝐢𝐬𝐭 𝐎𝐟 𝐁𝐫𝐨𝐚𝐝𝐜𝐚𝐬𝐭𝐞𝐝\n"
+    "♻️ /resat          – 𝐑𝐞𝐬𝐞𝐭 𝐁𝐨𝐭 𝐌𝐞𝐦𝐨𝐫𝐲\n\n"
+    "╚═════ Made with ❤️ by: {CREDIT} ═════╝"
+)
     
   await callback_query.message.edit_media(
     InputMediaPhoto(
