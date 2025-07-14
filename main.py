@@ -644,13 +644,9 @@ async def help_button(client, callback_query):
 async def upgrade_button(client, callback_query):
     user_id = callback_query.from_user.id
     first_name = callback_query.from_user.first_name
-
-    keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("📞 Contact Admin", url="https://t.me/staystrongbros")],
-        [InlineKeyboardButton("🔙 Back To Main Menu", callback_data="back_to_main_menu")]
-    ])
-
-    caption = (
+keyboard =
+InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]])
+caption = (
         "🛸**************************🛸\n"
         f"     💠 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 {first_name} 𝗧𝗢 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨 🌠\n"
         "🛸**************************🛸\n\n"
