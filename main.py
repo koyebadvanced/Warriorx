@@ -537,10 +537,10 @@ async def start(bot, m: Message):
         ])
         
         await start_message.edit_text(
-    f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞, 𝐌𝐫. {m.from_user.first_name} 🌟\n\n"
-    f"👑 𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐰 𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐌𝐞𝐦𝐛𝐞𝐫 — 𝐄𝐱𝐜𝐥𝐮𝐬𝐢𝐯𝐞 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐚𝐫𝐞 𝐮𝐧𝐥𝐨𝐜𝐤𝐞𝐝!\n\n"
-    f"🧭 𝐓𝐚𝐩 𝐭𝐡𝐞 __**𝐔𝐒𝐄𝐑 𝐂𝐌𝐃**__ 𝐛𝐮𝐭𝐭𝐨𝐧 𝐛𝐞𝐥𝐨𝐰 𝐭𝐨 𝐠𝐞𝐭 𝐬𝐭𝐚𝐫𝐭𝐞𝐝.\n\n"
-    f"💬 𝐅𝐨𝐫 𝐬𝐮𝐩𝐩𝐨𝐫𝐭, 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 —  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard
+            f"👋🏻 Welcome {m.from_user.first_name} \n\n" +
+            f"💎 Great! You are a premium member!\n"
+            f"🧭 Use button : __USER CMD__ to get started \n\n"
+            f"If you face any problem contact -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard
         )
     else:
         await asyncio.sleep(2)
