@@ -622,15 +622,14 @@ async def help_button(client, callback_query):
   keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu",  callback_data="back_to_main_menu")]])
   caption = (
     "╔═══❖ 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ❖═══╗\n\n"
-    "📥  /addauth [ID]      – Grant Admin Role\n"
-    "🗑️  /rmauth [ID]       – Remove Admin User\n"
-    "👥  /users             – List All Bot Users\n"
-    "📢  /broadcast         – Send Message To All\n"
-    "📊  /broadusers        – List Of Broadcasted Users\n"
-    "♻️  /resat             – Reset Bot Memory\n\n"
+    "📥  /addauth [ID]     – Grant Admin Role\n"
+    "🗑️  /rmauth [ID]      – Remove Admin User\n"
+    "👥  /users            – List All Bot Users\n"
+    "📢  /broadcast        – Send Message To All\n"
+    "📊  /broadusers       – List Of Broadcasted Users\n"
+    "♻️  /resat            – Reset Bot Memory\n\n"
     "╚═════ Made with ❤️ by: {CREDIT} ═════╝"
 )
-
     
   await callback_query.message.edit_media(
     InputMediaPhoto(
