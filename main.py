@@ -594,7 +594,7 @@ async def help_button(client, callback_query):
     "• /logs — 𝐕𝐢𝐞𝐰 𝐁𝐨𝐭 𝐋𝐨𝐠𝐬\n\n"
 
     "╰━━━━━━━━━━━━━━━━━━━━━━━╯\n"
-    "🪴 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲: [𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros)"
+    " 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲: [𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros)"
 )
     
   await callback_query.message.edit_media(
