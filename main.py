@@ -489,42 +489,38 @@ async def start(bot, m: Message):
     user_id = m.chat.id
     if user_id not in TOTAL_USERS:
         TOTAL_USERS.append(user_id)
-    user = await bot.get_me()
 
-    mention = user.mention
-    caption = f"🌟 Welcome {m.from_user.mention} ! 🌟"
-    start_message = await bot.send_photo(
+    # 1️⃣ First, send welcome image with caption
+    await bot.send_photo(
         chat_id=m.chat.id,
         photo="https://i.postimg.cc/7LJRmJ4Y/wallhaven-85xj7y.jpg",
-        caption=caption
+        caption=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
+                f"✨ 𝐄𝐧𝐭𝐞𝐫𝐢𝐧𝐠 𝐭𝐡𝐞 𝐬𝐲𝐬𝐭𝐞𝐦..."
+    )
+
+    # 2️⃣ Then send progress animation as a separate editable message
+    start_message = await bot.send_message(
+        chat_id=m.chat.id,
+        text=f"🔧 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦...\n"
+             f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-        f"Initializing Uploader bot... 🤖\n\n"
-        f"Progress: [▱▱▱▱▱▱▱▱▱▱] 0%\n\n"
+        f"🔄 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
+        f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-        f"Loading features... ⏳\n\n"
-        f"Progress: [▰▰▰▰▱▱▱▱▱▱] 25%\n\n"
-    )
-    
-    await asyncio.sleep(1)
-    await start_message.edit_text(
-        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-        f"This may take a moment, sit back and relax! 😊\n\n"
-        f"Progress: [▰▰▰▰▰▰▰▱▱▱] 50%\n\n"
+        f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐛𝐚𝐜𝐤𝐞𝐧𝐝 𝐬𝐲𝐬𝐭𝐞𝐦...\n"
+        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-        f"Checking subscription status... 🔍\n\n"
-        f"Progress: [▰▰▰▰▰▰▰▰▰▱] 75%\n\n"
+        f"🔍 𝐂𝐡𝐞𝐜𝐤𝐢𝐧𝐠 𝐬𝐮𝐛𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧...\n"
+        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"
     )
 
     await asyncio.sleep(1)
