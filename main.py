@@ -484,16 +484,20 @@ async def cancel_handler(client: Client, m: Message):
         cancel_message = None
         await m.reply_text("**⚡ No active process to cancel.**")
 
+from pyrogram.types import InputMediaPhoto
+
 @bot.on_message(filters.command("start"))
 async def start(bot, m: Message):
     user_id = m.chat.id
     if user_id not in TOTAL_USERS:
         TOTAL_USERS.append(user_id)
 
-    # Send welcome image and caption in one go (connected look)
-    await bot.send_photo(
+    img_url = "https://i.postimg.cc/rmBRxbJw/wallhaven-r7vo87.png"
+
+    # Step 1: Send Photo with Initial Caption
+    msg = await bot.send_photo(
         chat_id=m.chat.id,
-        photo="https://i.postimg.cc/rmBRxbJw/wallhaven-r7vo87.png",
+        photo=img_url,
         caption=(
             f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
             f"✨ 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... ⚙️\n"
@@ -501,26 +505,39 @@ async def start(bot, m: Message):
         )
     )
 
-    # Wait a bit before starting animation
     await asyncio.sleep(1)
 
-    msg = await bot.send_message(
-        chat_id=m.chat.id,
-        text=f"💀 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
-             f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
+    # Step 2: Edit Caption with 25%
+    await msg.edit_caption(
+        caption=(
+            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+            f"💀 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
+            f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
+        )
     )
 
     await asyncio.sleep(1)
-    await msg.edit_text(
-        f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦𝐬...\n"
-        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"
+
+    # Step 3: Edit Caption with 50%
+    await msg.edit_caption(
+        caption=(
+            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+            f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦𝐬...\n"
+            f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"
+        )
     )
 
     await asyncio.sleep(1)
-    await msg.edit_text(
-        f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"
-        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"
+
+    # Step 4: Edit Caption with 75%
+    await msg.edit_caption(
+        caption=(
+            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+            f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"
+            f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"
+        )
     )
+
     await asyncio.sleep(1)
     if m.chat.id in AUTH_USERS:
         keyboard = InlineKeyboardMarkup([
