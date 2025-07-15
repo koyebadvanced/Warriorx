@@ -490,37 +490,34 @@ async def start(bot, m: Message):
     if user_id not in TOTAL_USERS:
         TOTAL_USERS.append(user_id)
 
-    # 📸 Show image at top
+    # Send welcome image and caption in one go (connected look)
     await bot.send_photo(
         chat_id=m.chat.id,
-        photo="https://i.postimg.cc/rmBRxbJw/wallhaven-r7vo87.png"
+        photo="https://i.postimg.cc/rmBRxbJw/wallhaven-r7vo87.png",
+        caption=(
+            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+            f"✨ 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... ⚙️\n"
+            f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"
+        )
     )
 
-    # 🛠️ Start the animated loading messages
-    start_message = await bot.send_message(
+    # Wait a bit before starting animation
+    await asyncio.sleep(1)
+
+    msg = await bot.send_message(
         chat_id=m.chat.id,
-        text=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
-             f"✨ 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... ⚙️\n"
-             f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"
+        text=f"💀 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
+             f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
     )
 
     await asyncio.sleep(1)
-    await start_message.edit_text(
-        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
-        f"💀 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
-        f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
-    )
-
-    await asyncio.sleep(1)
-    await start_message.edit_text(
-        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+    await msg.edit_text(
         f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦𝐬...\n"
         f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"
     )
 
     await asyncio.sleep(1)
-    await start_message.edit_text(
-        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+    await msg.edit_text(
         f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"
         f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"
     )
