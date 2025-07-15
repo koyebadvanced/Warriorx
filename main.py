@@ -642,25 +642,25 @@ async def upgrade_button(client, callback_query):
   first_name = callback_query.from_user.first_name
   keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]])
   caption = (
-           f" 🎉 Welcome [{first_name}](tg://user?id={user_id}) to DRM Bot! 🎉\n\n"
-           f"You can have access to download all Non-DRM+AES Encrypted URLs 🔐 including\n\n"
-           f"<blockquote>• 📚 Appx Zip+Encrypted Url\n"
-           f"• 🎓 Classplus DRM+ NDRM\n"
-           f"• 🧑‍🏫 PhysicsWallah DRM\n"
-           f"• 📚 CareerWill + PDF\n"
-           f"• 🎓 Khan GS\n"
-           f"• 🎓 Study Iq DRM\n"
-           f"• 🚀 APPX + APPX Enc PDF\n"
-           f"• 🎓 Vimeo Protection\n"
-           f"• 🎓 Brightcove Protection\n"
-           f"• 🎓 Visionias Protection\n"
-           f"• 🎓 Zoom Video\n"
-           f"• 🎓 Utkarsh Protection(Video + PDF)\n"
-           f"• 🎓 All Non DRM+AES Encrypted URLs\n"
-           f"• 🎓 MPD URLs if the key is known (e.g., Mpd_url?key=key XX:XX)</blockquote>\n\n"
-           f"<b>💵 Monthly Plan: free</b>\n\n"
-           f"If you want to buy membership of the bot, feel free to contact [{CREDIT}](tg://user?id={OWNER})\n"
-    )  
+    f"🎉 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 [{first_name}](tg://user?id={user_id}) 𝐭𝐨 𝐃𝐑𝐌 𝐁𝐨𝐭! 🎉\n\n"
+    f"𝐘𝐨𝐮 𝐜𝐚𝐧 𝐡𝐚𝐯𝐞 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐚𝐥𝐥 𝐍𝐨𝐧-𝐃𝐑𝐌 + 𝐀𝐄𝐒 𝐄𝐧𝐜𝐫𝐲𝐩𝐭𝐞𝐝 𝐔𝐑𝐋𝐬 🔐 𝐢𝐧𝐜𝐥𝐮𝐝𝐢𝐧𝐠\n\n"
+    f"<blockquote>• 📚 𝐀𝐩𝐩𝐱 𝐙𝐢𝐩 + 𝐄𝐧𝐜𝐫𝐲𝐩𝐭𝐞𝐝 𝐔𝐫𝐥\n"
+    f"• 🎓 𝐂𝐥𝐚𝐬𝐬𝐩𝐥𝐮𝐬 𝐃𝐑𝐌 + 𝐍𝐃𝐑𝐌\n"
+    f"• 🧑‍🏫 𝐏𝐡𝐲𝐬𝐢𝐜𝐬𝐖𝐚𝐥𝐥𝐚𝐡 𝐃𝐑𝐌\n"
+    f"• 📚 𝐂𝐚𝐫𝐞𝐞𝐫𝐖𝐢𝐥𝐥 + 𝐏𝐃𝐅\n"
+    f"• 🎓 𝐊𝐡𝐚𝐧 𝐆𝐒\n"
+    f"• 🎓 𝐒𝐭𝐮𝐝𝐲 𝐈𝐐 𝐃𝐑𝐌\n"
+    f"• 🚀 𝐀𝐏𝐏𝐗 + 𝐀𝐏𝐏𝐗 𝐄𝐧𝐜 𝐏𝐃𝐅\n"
+    f"• 🎓 𝐕𝐢𝐦𝐞𝐨 𝐏𝐫𝐨𝐭𝐞𝐜𝐭𝐢𝐨𝐧\n"
+    f"• 🎓 𝐁𝐫𝐢𝐠𝐡𝐭𝐜𝐨𝐯𝐞 𝐏𝐫𝐨𝐭𝐞𝐜𝐭𝐢𝐨𝐧\n"
+    f"• 🎓 𝐕𝐢𝐬𝐢𝐨𝐧𝐈𝐀𝐒 𝐏𝐫𝐨𝐭𝐞𝐜𝐭𝐢𝐨𝐧\n"
+    f"• 🎓 𝐙𝐨𝐨𝐦 𝐕𝐢𝐝𝐞𝐨\n"
+    f"• 🎓 𝐔𝐭𝐤𝐚𝐫𝐬𝐡 𝐏𝐫𝐨𝐭𝐞𝐜𝐭𝐢𝐨𝐧 (𝐕𝐢𝐝𝐞𝐨 + 𝐏𝐃𝐅)\n"
+    f"• 🎓 𝐀𝐥𝐥 𝐍𝐨𝐧 𝐃𝐑𝐌 + 𝐀𝐄𝐒 𝐄𝐧𝐜𝐫𝐲𝐩𝐭𝐞𝐝 𝐔𝐑𝐋𝐬\n"
+    f"• 🎓 𝐌𝐏𝐃 𝐔𝐑𝐋𝐬 𝐢𝐟 𝐭𝐡𝐞 𝐤𝐞𝐲 𝐢𝐬 𝐤𝐧𝐨𝐰𝐧 (𝐞.𝐠., 𝐌𝐩𝐝_𝐮𝐫𝐥?𝐤𝐞𝐲=𝐤𝐞𝐲 𝐗𝐗:𝐗𝐗)</blockquote>\n\n"
+    f"<b>💵 𝐌𝐨𝐧𝐭𝐡𝐥𝐲 𝐏𝐥𝐚𝐧: 𝐟𝐫𝐞𝐞</b>\n\n"
+    f"𝐈𝐟 𝐲𝐨𝐮 𝐰𝐚𝐧𝐭 𝐭𝐨 𝐛𝐮𝐲 𝐦𝐞𝐦𝐛𝐞𝐫𝐬𝐡𝐢𝐩 𝐨𝐟 𝐭𝐡𝐞 𝐛𝐨𝐭, 𝐟𝐞𝐞𝐥 𝐟𝐫𝐞𝐞 𝐭𝐨 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 [{CREDIT}](tg://user?id={OWNER})"
+)
     
   await callback_query.message.edit_media(
     InputMediaPhoto(
