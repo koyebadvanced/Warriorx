@@ -492,29 +492,29 @@ async def start(bot, m: Message):
 
     start_message = await bot.send_message(
         chat_id=m.chat.id,
-        text=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
-             f"Initializing bot system... ⚙️\n"
+        text=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+             f"✨ 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... ⚙️\n"
              f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
-        f"Loading modules... 🔄\n"
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+        f"💀 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
         f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
-        f"Activating systems... 🚀\n"
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+        f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦𝐬...\n"
         f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
-        f"Finalizing setup... 🔐\n"
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
+        f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"
         f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"
     )
     await asyncio.sleep(1)
