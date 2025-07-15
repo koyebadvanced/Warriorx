@@ -629,7 +629,7 @@ async def upgrade_button(client, callback_query):
 
     caption = (
         "🛸⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆🛸\n"
-        f"     🎉 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐅𝐄𝐀𝐓𝐔𝐑𝐄𝐒 𝐔𝐍𝐋𝐎𝐂𝐊𝐄𝐃 🎉\n"
+        f"     🎉 𝐖𝐀𝐑𝐑𝐈𝐎𝐑 𝐅𝐄𝐀𝐓𝐔𝐑𝐄𝐒 𝐔𝐍𝐋𝐎𝐂𝐊𝐄𝐃 🎉\n"
         "🛸⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆⋆🛸\n\n"
 
         f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 [{first_name}](tg://user?id={user_id}) 𝐭𝐨 𝐃𝐑𝐌 𝐁𝐨𝐭! 🌟\n\n"
@@ -655,7 +655,7 @@ async def upgrade_button(client, callback_query):
 
     await callback_query.message.edit_media(
         InputMediaPhoto(
-            media="https://envs.sh/GVI.jpg",
+            media="https://i.postimg.cc/dVRYGcbC/c78f47eb1be7788ebe3f60079d6cbe40.jpg",
       caption=caption
     ),
     reply_markup=keyboard
