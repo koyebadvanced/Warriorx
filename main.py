@@ -486,62 +486,42 @@ async def cancel_handler(client: Client, m: Message):
 
 from pyrogram.types import InputMediaPhoto
 
-@bot.on_message(filters.command("start"))
-async def start(bot, m: Message):
-    user_id = m.chat.id
-    if user_id not in TOTAL_USERS:
-        TOTAL_USERS.append(user_id)
+start_message = await bot.send_message(  
+    chat_id=m.chat.id,  
+    text=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
+         f"✨ 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... ⚙️\n"  
+         f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"  
+)  
 
-    img_url = "https://i.postimg.cc/rmBRxbJw/wallhaven-r7vo87.png"
+await asyncio.sleep(1)  
+await start_message.edit_text(  
+    f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
+    f"💀 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"  
+    f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"  
+)  
 
-    # Step 1: Send Photo with Initial Caption
-    msg = await bot.send_photo(
-        chat_id=m.chat.id,
-        photo=img_url,
-        caption=(
-            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
-            f"✨ 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... ⚙️\n"
-            f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"
-        )
-    )
+await asyncio.sleep(1)  
+await start_message.edit_text(  
+    f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
+    f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦𝐬...\n"  
+    f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"  
+)  
 
-    await asyncio.sleep(1)
-
-    # Step 2: Edit Caption with 25%
-    await msg.edit_caption(
-        caption=(
-            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
-            f"💀 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
-            f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
-        )
-    )
-
-    await asyncio.sleep(1)
-
-    # Step 3: Edit Caption with 50%
-    await msg.edit_caption(
-        caption=(
-            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
-            f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦𝐬...\n"
-            f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"
-        )
-    )
-
-    await asyncio.sleep(1)
-
-    # Step 4: Edit Caption with 75%
-    await msg.edit_caption(
-        caption=(
-            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
-            f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"
-            f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"
-        )
-    )
+await asyncio.sleep(1)  
+await start_message.edit_text(  
+    f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
+    f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"  
+    f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"  
+)
 
     await asyncio.sleep(1)
     if m.chat.id in AUTH_USERS:
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("💎 Features", callback_data="feat_command")],
+            [InlineKeyboardButton("USER CMD", callback_data="user_command"), InlineKeyboardButton("OWNER CMD", callback_data="owner_command")],
+            [InlineKeyboardButton("🎫 plans", callback_data="upgrade_command")],
+            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Developer", url="https://t.me/staystrongbros")],
+        ])lback_data="feat_command")],
             [InlineKeyboardButton("USER CMD", callback_data="user_command"), InlineKeyboardButton("OWNER CMD", callback_data="owner_command")],
             [InlineKeyboardButton("🎫 plans", callback_data="upgrade_command")],
             [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Developer", url="https://t.me/staystrongbros")],
