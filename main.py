@@ -619,15 +619,19 @@ async def help_button(client, callback_query):
   first_name = callback_query.from_user.first_name
   keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu",  callback_data="back_to_main_menu")]])
   caption = (
-    "╭━━━⚙️ 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ⚙️━━━╮\n\n"
-    "👑 𝐀𝐝𝐝 𝐀𝐝𝐦𝐢𝐧       ➜ /addauth [ID]\n"
-    "🗑️ 𝐑𝐞𝐦𝐨𝐯𝐞 𝐀𝐝𝐦𝐢𝐧    ➜ /rmauth [ID]\n"
-    "👥 𝐔𝐬𝐞𝐫 𝐋𝐢𝐬𝐭       ➜ /users\n"
-    "📢 𝐁𝐫𝐨𝐚𝐝𝐜𝐚𝐬𝐭       ➜ /broadcast [msg]\n"
-    "📊 𝐒𝐞𝐧𝐭 𝐔𝐬𝐞𝐫𝐬      ➜ /broadusers\n"
-    "♻️ 𝐑𝐞𝐬𝐞𝐭 𝐌𝐞𝐦𝐨𝐫𝐲     ➜ /resat\n\n"
-    "🔐 𝐀𝐜𝐜𝐞𝐬𝐬: 𝐀𝐝𝐦𝐢𝐧𝐬 𝐎𝐧𝐥𝐲\n"
-    "╰━━━━❤️‍🔥 𝐌𝐚𝐝𝐞 𝐛𝐲 [𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros) ━━━━╯"
+    "╭━━━━━━━𓆩⚙️𓆪━━━━━━━╮\n"
+    "    🔐 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 🔐\n"
+    "╰━━━━━━━𓆩⚙️𓆪━━━━━━━╯\n\n"
+
+    "👑 𝐀𝐝𝐝 𝐀𝐝𝐦𝐢𝐧        ➤ /addauth [ID]\n"
+    "🗑️ 𝐑𝐞𝐦𝐨𝐯𝐞 𝐀𝐝𝐦𝐢𝐧    ➤ /rmauth [ID]\n"
+    "👥 𝐔𝐬𝐞𝐫 𝐋𝐢𝐬𝐭         ➤ /users\n"
+    "📢 𝐁𝐫𝐨𝐚𝐝𝐜𝐚𝐬𝐭        ➤ /broadcast [msg]\n"
+    "📊 𝐒𝐞𝐧𝐭 𝐔𝐬𝐞𝐫𝐬       ➤ /broadusers\n"
+    "♻️ 𝐑𝐞𝐬𝐞𝐭 𝐌𝐞𝐦𝐨𝐫𝐲      ➤ /resat\n\n"
+
+    "🔒 𝐀𝐜𝐜𝐞𝐬𝐬: 𝐀𝐝𝐦𝐢𝐧𝐬 𝐎𝐧𝐥𝐲\n"
+    "❤‍🔥 𝐌𝐚𝐝𝐞 𝐁𝐲: [𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros)\n"
 )
     
   await callback_query.message.edit_media(
