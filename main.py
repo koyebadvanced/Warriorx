@@ -490,6 +490,13 @@ async def start(bot, m: Message):
     if user_id not in TOTAL_USERS:
         TOTAL_USERS.append(user_id)
 
+    # 📸 Show image at top
+    await bot.send_photo(
+        chat_id=m.chat.id,
+        photo="https://i.postimg.cc/rmBRxbJw/wallhaven-r7vo87.png"
+    )
+
+    # 🛠️ Start the animated loading messages
     start_message = await bot.send_message(
         chat_id=m.chat.id,
         text=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"
