@@ -604,7 +604,7 @@ async def help_button(client, callback_query):
     "• /logs — 𝐕𝐢𝐞𝐰 𝐁𝐨𝐭 𝐋𝐨𝐠𝐬\n\n"
 
     "╰━━━━━━━━━━━━━━━━━━━━━━━╯\n"
-    "💎 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲: [🌠 𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros)"
+    "💎 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲: [𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros)"
 )
     
   await callback_query.message.edit_media(
@@ -621,15 +621,15 @@ async def help_button(client, callback_query):
   first_name = callback_query.from_user.first_name
   keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Main Menu",  callback_data="back_to_main_menu")]])
   caption = (
-    "╭━❖ [ 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ] ❖━╮\n\n"
-    "👑  /addauth [ID]      ┇ Grant Admin Privilege\n"
-    "🗑️  /rmauth [ID]       ┇ Revoke Admin Access\n"
-    "👥  /users             ┇ View All Bot Users\n"
-    "📢  /broadcast         ┇ Send Message to Everyone\n"
-    "📊  /broadusers        ┇ List Broadcasted Users\n"
-    "♻️  /resat             ┇ Reset Bot Cache/Memory\n\n"
-    "🔐 𝗔𝗰𝗰𝗲𝘀𝘀: 𝗔𝗱𝗺𝗶𝗻 𝗢𝗻𝗹𝘆\n"
-    "╰━❖ Made with ❤️ by: [𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros) ❖━╯"
+    "╭━𓆩⚙️𓆪━[ 𝐀𝐃𝐌𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ]━𓆩⚙️𓆪━╮\n\n"
+    "👑 /addauth [ID]       — Grant Admin Privilege\n"
+    "🗑️ /rmauth [ID]        — Revoke Admin Access\n"
+    "👥 /users              — View All Bot Users\n"
+    "📢 /broadcast          — Message All Users\n"
+    "📊 /broadusers         — Broadcasted Users List\n"
+    "♻️ /resat              — Reset Bot Cache/Memory\n\n"
+    "🔐 𝗔𝗰𝗰𝗲𝘀𝘀: 𝗔𝗱𝗺𝗶𝗻𝘀 𝗢𝗻𝗹𝘆\n"
+    "╰━━𓆩❤️‍🔥𓆪 Made by [𝐖𝐀𝐑𝐑𝐈𝐎𝐑](https://t.me/staystrongbros) ════╯"
 )
     
   await callback_query.message.edit_media(
