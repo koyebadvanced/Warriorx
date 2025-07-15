@@ -512,20 +512,15 @@ await start_message.edit_text(
     f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
     f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"  
     f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"  
-)
-
-    await asyncio.sleep(1)
-    if m.chat.id in AUTH_USERS:
-        keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("💎 Features", callback_data="feat_command")],
-            [InlineKeyboardButton("USER CMD", callback_data="user_command"), InlineKeyboardButton("OWNER CMD", callback_data="owner_command")],
-            [InlineKeyboardButton("🎫 plans", callback_data="upgrade_command")],
-            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Developer", url="https://t.me/staystrongbros")],
-        ])lback_data="feat_command")],
-            [InlineKeyboardButton("USER CMD", callback_data="user_command"), InlineKeyboardButton("OWNER CMD", callback_data="owner_command")],
-            [InlineKeyboardButton("🎫 plans", callback_data="upgrade_command")],
-            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Developer", url="https://t.me/staystrongbros")],
-        ])
+)  
+await asyncio.sleep(1)  
+if m.chat.id in AUTH_USERS:  
+    keyboard = InlineKeyboardMarkup([  
+        [InlineKeyboardButton("💎 Features", callback_data="feat_command")],  
+        [InlineKeyboardButton("USER CMD", callback_data="user_command"), InlineKeyboardButton("OWNER CMD", callback_data="owner_command")],  
+        [InlineKeyboardButton("🎫 plans", callback_data="upgrade_command")],  
+        [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Developer", url="https://t.me/staystrongbros")],  
+    ])
         
         await start_message.edit_text(
     f"🌟 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 {m.from_user.first_name} \n\n"
