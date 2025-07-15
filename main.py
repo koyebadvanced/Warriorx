@@ -490,27 +490,33 @@ async def start(bot, m: Message):
     if user_id not in TOTAL_USERS:
         TOTAL_USERS.append(user_id)
 
-    # Initial welcome image
-    msg = await bot.send_photo(
+    start_message = await bot.send_message(
         chat_id=m.chat.id,
-        photo="https://i.postimg.cc/7LJRmJ4Y/wallhaven-85xj7y.jpg",
-        caption="🌟 Welcome Warrior ⚡⚡\n✨ Bot System Initializing...\n\n⏳ Loading core modules...\nProgress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 0%"
+        text=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
+             f"Initializing bot system... ⚙️\n"
+             f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"
     )
 
-    # Progress animation steps
-    steps = [
-        ("👾 Loading core components...", "[⬢⬢⬡⬡⬡⬡⬡⬡⬡⬡] 20%"),
-        ("🚀 Activating backend systems...", "[⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 40%"),
-        ("🔍 Checking subscription status...", "[⬢⬢⬢⬢⬢⬢⬡⬡⬡⬡] 60%"),
-        ("🧠 Initializing database cache...", "[⬢⬢⬢⬢⬢⬢⬢⬢⬡⬡] 80%"),
-        ("✅ System Ready! Launching Menu...", "[⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢] 100%"),
-    ]
+    await asyncio.sleep(1)
+    await start_message.edit_text(
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
+        f"Loading modules... 🔄\n"
+        f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
+    )
 
-    for text, bar in steps:
-        await asyncio.sleep(1.2)
-        await msg.edit_caption(
-            f"🌟 Welcome Warrior ⚡⚡\n✨ Bot System Initializing...\n\n{text}\nProgress: {bar}"
-        )
+    await asyncio.sleep(1)
+    await start_message.edit_text(
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
+        f"Activating systems... 🚀\n"
+        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"
+    )
+
+    await asyncio.sleep(1)
+    await start_message.edit_text(
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
+        f"Finalizing setup... 🔐\n"
+        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"
+    )
     await asyncio.sleep(1)
     if m.chat.id in AUTH_USERS:
         keyboard = InlineKeyboardMarkup([
@@ -524,7 +530,7 @@ async def start(bot, m: Message):
     f"🌟 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 {m.from_user.first_name} \n\n"
     f"💎 𝗚𝗿𝗲𝗮𝘁! 𝗬𝗼𝘂 𝗮𝗿𝗲 𝗮 𝗽𝗿𝗲𝗺𝗶𝘂𝗺 𝗺𝗲𝗺𝗯𝗲𝗿!\n"
     f"🧭 𝗨𝘀𝗲 𝗯𝘂𝘁𝘁𝗼𝗻 : 𝗨𝗦𝗘𝗥 𝗖𝗠𝗗 𝘁𝗼 𝗴𝗲𝘁 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 \n\n"
-            f" 𝗜𝗳 𝘆𝗼𝘂 𝗳𝗮𝗰𝗲 𝗮𝗻𝘆 𝗽𝗿𝗼𝗯𝗹𝗲𝗺 𝗰𝗼𝗻𝘁𝗮𝗰𝘁 -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard
+            f" 𝗜𝗳 𝘆𝗼𝘂 𝗳𝗮𝗰𝗲 𝗮𝗻𝘆 𝗽𝗿𝗼𝗯𝗹𝗲𝗺 𝗰𝗼𝗻𝘁𝗮𝗰𝘁 -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard ,
         )
     else:
         await asyncio.sleep(2)
