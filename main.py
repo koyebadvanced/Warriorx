@@ -490,37 +490,41 @@ async def start(bot, m: Message):
     if user_id not in TOTAL_USERS:
         TOTAL_USERS.append(user_id)
 
-    # 1️⃣ First, send welcome image with caption
+    # 1️⃣ Send welcome photo with cleaner caption
     await bot.send_photo(
         chat_id=m.chat.id,
         photo="https://i.postimg.cc/7LJRmJ4Y/wallhaven-85xj7y.jpg",
-        caption=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} 🌟\n\n"
-                f"✨ 𝐄𝐧𝐭𝐞𝐫𝐢𝐧𝐠 𝐭𝐡𝐞 𝐬𝐲𝐬𝐭𝐞𝐦..."
+        caption=(
+            f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡\n"
+            f"✨ 𝐁𝐨𝐭 𝐒𝐲𝐬𝐭𝐞𝐦 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠..."
+        )
     )
 
-    # 2️⃣ Then send progress animation as a separate editable message
+    # 2️⃣ Send animated progress separately (editable)
     start_message = await bot.send_message(
         chat_id=m.chat.id,
-        text=f"🔧 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦...\n"
-             f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"
+        text=(
+            f"🔧 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
+            f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 0%"
+        )
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🔄 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"
-        f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"
+        f"👾 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐜𝐨𝐦𝐩𝐨𝐧𝐞𝐧𝐭𝐬...\n"
+        f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 25%"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
         f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐛𝐚𝐜𝐤𝐞𝐧𝐝 𝐬𝐲𝐬𝐭𝐞𝐦...\n"
-        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"
+        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 50%"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🔍 𝐂𝐡𝐞𝐜𝐤𝐢𝐧𝐠 𝐬𝐮𝐛𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧...\n"
-        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"
+        f"🔍 𝐂𝐡𝐞𝐜𝐤𝐢𝐧𝐠 𝐬𝐮𝐛𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧 𝐬𝐭𝐚𝐭𝐮𝐬...\n"
+        f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 75%"
     )
 
     await asyncio.sleep(1)
