@@ -513,7 +513,9 @@ await start_message.edit_text(
     f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"  
     f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"  
 )  
+
 await asyncio.sleep(1)  
+
 if m.chat.id in AUTH_USERS:  
     keyboard = InlineKeyboardMarkup([  
         [InlineKeyboardButton("💎 Features", callback_data="feat_command")],  
@@ -521,13 +523,15 @@ if m.chat.id in AUTH_USERS:
         [InlineKeyboardButton("🎫 plans", callback_data="upgrade_command")],  
         [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Developer", url="https://t.me/staystrongbros")],  
     ])
-        
-        await start_message.edit_text(
-    f"🌟 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 {m.from_user.first_name} \n\n"
-    f"💎 𝗚𝗿𝗲𝗮𝘁! 𝗬𝗼𝘂 𝗮𝗿𝗲 𝗮 𝗽𝗿𝗲𝗺𝗶𝘂𝗺 𝗺𝗲𝗺𝗯𝗲𝗿!\n"
-    f"🧭 𝗨𝘀𝗲 𝗯𝘂𝘁𝘁𝗼𝗻 : 𝗨𝗦𝗘𝗥 𝗖𝗠𝗗 𝘁𝗼 𝗴𝗲𝘁 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 \n\n"
-            f" 𝗜𝗳 𝘆𝗼𝘂 𝗳𝗮𝗰𝗲 𝗮𝗻𝘆 𝗽𝗿𝗼𝗯𝗹𝗲𝗺 𝗰𝗼𝗻𝘁𝗮𝗰𝘁 -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard ,
-        )
+    
+    await start_message.edit_text(
+        f"🌟 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 {m.from_user.first_name} \n\n"
+        f"💎 𝗚𝗿𝗲𝗮𝘁! 𝗬𝗼𝘂 𝗮𝗿𝗲 𝗮 𝗽𝗿𝗲𝗺𝗶𝘂𝗺 𝗺𝗲𝗺𝗯𝗲𝗿!\n"
+        f"🧭 𝗨𝘀𝗲 𝗯𝘂𝘁𝘁𝗼𝗻 : 𝗨𝗦𝗘𝗥 𝗖𝗠𝗗 𝘁𝗼 𝗴𝗲𝘁 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 \n\n"
+        f"𝗜𝗳 𝘆𝗼𝘂 𝗳𝗮𝗰𝗲 𝗮𝗻𝘆 𝗽𝗿𝗼𝗯𝗹𝗲𝗺 𝗰𝗼𝗻𝘁𝗮𝗰𝘁 -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})",
+        disable_web_page_preview=True,
+        reply_markup=keyboard
+    )
     else:
         await asyncio.sleep(2)
         keyboard = InlineKeyboardMarkup([
