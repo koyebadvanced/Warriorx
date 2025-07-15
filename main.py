@@ -505,6 +505,12 @@ async def start(bot, m: Message):
         ("🧠 Initializing database cache...", "[⬢⬢⬢⬢⬢⬢⬢⬢⬡⬡] 80%"),
         ("✅ System Ready! Launching Menu...", "[⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢] 100%"),
     ]
+
+    for text, bar in steps:
+        await asyncio.sleep(1.2)
+        await msg.edit_caption(
+            f"🌟 Welcome Warrior ⚡⚡\n✨ Bot System Initializing...\n\n{text}\nProgress: {bar}"
+        )
     await asyncio.sleep(1)
     if m.chat.id in AUTH_USERS:
         keyboard = InlineKeyboardMarkup([
