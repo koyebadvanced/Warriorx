@@ -489,42 +489,43 @@ async def start(bot, m: Message):
     user_id = m.chat.id
     if user_id not in TOTAL_USERS:
         TOTAL_USERS.append(user_id)
-    user = await bot.get_me()
 
+    user = await bot.get_me()
     mention = user.mention
-    caption = f"🌟 Welcome {m.from_user.mention} ! 🌟"
+    caption = f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡"
+
     start_message = await bot.send_photo(
         chat_id=m.chat.id,
-        photo="https://tinypic.host/images/2025/07/14/IMG_20250714_161041_194.jpg",
+        photo="https://i.postimg.cc/vBHYKVyx/wallhaven-2k73wm.jpg",
         caption=caption
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-        f"Initializing Uploader bot... 🤖\n\n"
-        f"Progress: [⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️] 0%\n\n"
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.first_name}! 🌟\n\n"
+        f"𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... 🤖\n\n"
+        f"𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 0%\n\n"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-        f"Loading features... ⏳\n\n"
-        f"Progress: [🟥🟥🟥⬜️⬜️⬜️⬜️⬜️⬜️⬜️] 25%\n\n"
-    )
-    
-    await asyncio.sleep(1)
-    await start_message.edit_text(
-        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-        f"This may take a moment, sit back and relax! 😊\n\n"
-        f"Progress: [🟧🟧🟧🟧🟧⬜️⬜️⬜️⬜️⬜️] 50%\n\n"
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.first_name}! 🌟\n\n"
+        f"𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬... ⏳\n\n"
+        f"𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬: [⬢⬢⬢⬡⬡⬡⬡⬡⬡⬡] 25%\n\n"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
-        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-        f"Checking subscription status... 🔍\n\n"
-        f"Progress: [🟨🟨🟨🟨🟨🟨🟨🟨⬜️⬜️] 75%\n\n"
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.first_name}! 🌟\n\n"
+        f"𝐒𝐢𝐭 𝐛𝐚𝐜𝐤 𝐚𝐧𝐝 𝐫𝐞𝐥𝐚𝐱! 😊\n\n"
+        f"𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬: [⬢⬢⬢⬢⬢⬢⬡⬡⬡⬡] 50%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await start_message.edit_text(
+        f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.first_name}! 🌟\n\n"
+        f"𝐂𝐡𝐞𝐜𝐤𝐢𝐧𝐠 𝐬𝐮𝐛𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧 𝐬𝐭𝐚𝐭𝐮𝐬... 🔍\n\n"
+        f"𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬: [⬢⬢⬢⬢⬢⬢⬢⬢⬡⬡] 75%\n\n"
     )
 
     await asyncio.sleep(1)
@@ -532,7 +533,7 @@ async def start(bot, m: Message):
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("💎 Features", callback_data="feat_command"), InlineKeyboardButton("🖱️Commands", callback_data="cmd_command")],
             [InlineKeyboardButton("💳 Plans", callback_data="upgrade_command")],
-            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Repo", url="https://github.com/nikhilsainiop/saini-txt-direct")],
+            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🧣 Developer", url="https://t.me/staystrongbros")],
         ])
         
         await start_message.edit_text(
@@ -546,7 +547,7 @@ async def start(bot, m: Message):
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("💎 Features", callback_data="feat_command"), InlineKeyboardButton("🖱️Commands", callback_data="cmd_command")],
             [InlineKeyboardButton("💳 Plans", callback_data="upgrade_command")],
-            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Repo", url="https://github.com/nikhilsainiop/saini-txt-direct")],
+            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🧣 Developer", url="https://t.me/staystrongbros")],
         ])
         await start_message.edit_text(
            f" 🎉 Welcome {m.from_user.first_name} to DRM Bot! 🎉\n\n"
