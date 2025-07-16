@@ -503,21 +503,21 @@ async def start(bot, m: Message):
     await asyncio.sleep(1)
     await start_message.edit_text(
         f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.first_name}! 🌟\n\n"
-        f"𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... 🤖\n\n"
+        f"𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... 👾\n\n"
         f"𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 0%\n\n"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
         f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.first_name}! 🌟\n\n"
-        f"𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬... ⏳\n\n"
+        f"𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬... ⏰\n\n"
         f"𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬: [⬢⬢⬢⬡⬡⬡⬡⬡⬡⬡] 25%\n\n"
     )
 
     await asyncio.sleep(1)
     await start_message.edit_text(
         f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.first_name}! 🌟\n\n"
-        f"𝐒𝐢𝐭 𝐛𝐚𝐜𝐤 𝐚𝐧𝐝 𝐫𝐞𝐥𝐚𝐱! 😊\n\n"
+        f"𝐒𝐢𝐭 𝐛𝐚𝐜𝐤 𝐚𝐧𝐝 𝐫𝐞𝐥𝐚𝐱! 💀\n\n"
         f"𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬: [⬢⬢⬢⬢⬢⬢⬡⬡⬡⬡] 50%\n\n"
     )
 
@@ -531,17 +531,19 @@ async def start(bot, m: Message):
     await asyncio.sleep(1)
     if m.chat.id in AUTH_USERS:
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("💎 Features", callback_data="feat_command"), InlineKeyboardButton("🖱️Commands", callback_data="cmd_command")],
+            [InlineKeyboardButton("💎 Features", callback_data="feat_command"), InlineKeyboardButton("❄️ Commands", callback_data="cmd_command")],
             [InlineKeyboardButton("💳 Plans", callback_data="upgrade_command")],
             [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🧣 Developer", url="https://t.me/staystrongbros")],
         ])
         
         await start_message.edit_text(
-            f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
-            f"Great! You are a premium member!\n"
-            f"Use button : **🖱️ Commands** to get started 🌟\n\n"
-            f"If you face any problem contact -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard
-        )
+    f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.first_name}! 🌟\n\n"
+    f"𝐆𝐫𝐞𝐚𝐭! 𝐘𝐨𝐮 𝐚𝐫𝐞 𝐚 𝐩𝐫𝐞𝐦𝐢𝐮𝐦 𝐦𝐞𝐦𝐛𝐞𝐫! 💎\n\n"
+    f"𝐔𝐬𝐞 𝐭𝐡𝐞 𝐛𝐮𝐭𝐭𝐨𝐧: **❄️ Commands** 𝐭𝐨 𝐠𝐞𝐭 𝐬𝐭𝐚𝐫𝐭𝐞𝐝 🌟\n\n"
+    f"𝐈𝐟 𝐲𝐨𝐮 𝐟𝐚𝐜𝐞 𝐚𝐧𝐲 𝐩𝐫𝐨𝐛𝐥𝐞𝐦, 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 - [{CREDIT}⁬](tg://openmessage?user_id={OWNER})",
+    disable_web_page_preview=True,
+    reply_markup=keyboard
+)
     else:
         await asyncio.sleep(2)
         keyboard = InlineKeyboardMarkup([
