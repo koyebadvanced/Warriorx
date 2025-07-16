@@ -484,71 +484,73 @@ async def cancel_handler(client: Client, m: Message):
         cancel_message = None
         await m.reply_text("**⚡ No active process to cancel.**")
 
-from pyrogram.types import InputMediaPhoto
+@bot.on_message(filters.command("start"))
+async def start(bot, m: Message):
+    user_id = m.chat.id
+    if user_id not in TOTAL_USERS:
+        TOTAL_USERS.append(user_id)
+    user = await bot.get_me()
 
-start_message = await bot.send_message(  
-    chat_id=m.chat.id,  
-    text=f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
-         f"✨ 𝐈𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐛𝐨𝐭 𝐬𝐲𝐬𝐭𝐞𝐦... ⚙️\n"  
-         f"Progress: [⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡] 𝟎%"  
-)  
-
-await asyncio.sleep(1)  
-await start_message.edit_text(  
-    f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
-    f"💀 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐫𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬...\n"  
-    f"Progress: [⬢⬢⬢⬢⬡⬡⬡⬡⬡⬡] 𝟐𝟓%"  
-)  
-
-await asyncio.sleep(1)  
-await start_message.edit_text(  
-    f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
-    f"🚀 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦𝐬...\n"  
-    f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬡⬡⬡] 𝟓𝟎%"  
-)  
-
-await asyncio.sleep(1)  
-await start_message.edit_text(  
-    f"🌟 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {m.from_user.mention} ⚡⚡\n\n"  
-    f"🔐 𝐅𝐢𝐧𝐚𝐥𝐢𝐳𝐢𝐧𝐠 𝐬𝐞𝐭𝐮𝐩...\n"  
-    f"Progress: [⬢⬢⬢⬢⬢⬢⬢⬢⬢⬡] 𝟕𝟓%"  
-)  
-
-await asyncio.sleep(1)  
-
-if m.chat.id in AUTH_USERS:  
-    keyboard = InlineKeyboardMarkup([  
-        [InlineKeyboardButton("💎 Features", callback_data="feat_command")],  
-        [InlineKeyboardButton("USER CMD", callback_data="user_command"), InlineKeyboardButton("OWNER CMD", callback_data="owner_command")],  
-        [InlineKeyboardButton("🎫 plans", callback_data="upgrade_command")],  
-        [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Developer", url="https://t.me/staystrongbros")],  
-    ])
-    
-    await start_message.edit_text(
-        f"🌟 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 {m.from_user.first_name} \n\n"
-        f"💎 𝗚𝗿𝗲𝗮𝘁! 𝗬𝗼𝘂 𝗮𝗿𝗲 𝗮 𝗽𝗿𝗲𝗺𝗶𝘂𝗺 𝗺𝗲𝗺𝗯𝗲𝗿!\n"
-        f"🧭 𝗨𝘀𝗲 𝗯𝘂𝘁𝘁𝗼𝗻 : 𝗨𝗦𝗘𝗥 𝗖𝗠𝗗 𝘁𝗼 𝗴𝗲𝘁 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 \n\n"
-        f"𝗜𝗳 𝘆𝗼𝘂 𝗳𝗮𝗰𝗲 𝗮𝗻𝘆 𝗽𝗿𝗼𝗯𝗹𝗲𝗺 𝗰𝗼𝗻𝘁𝗮𝗰𝘁 -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})",
-        disable_web_page_preview=True,
-        reply_markup=keyboard
+    mention = user.mention
+    caption = f"🌟 Welcome {m.from_user.mention} ! 🌟"
+    start_message = await bot.send_photo(
+        chat_id=m.chat.id,
+        photo="https://tinypic.host/images/2025/07/14/IMG_20250714_161041_194.jpg",
+        caption=caption
     )
-else:
-    await asyncio.sleep(2)
-    keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("💎 Features", callback_data="feat_command")],
-        [InlineKeyboardButton("USER CMD", callback_data="user_command"), InlineKeyboardButton("OWNER CMD", callback_data="owner_command")],
-        [InlineKeyboardButton("🎫 plans", callback_data="upgrade_command")],
-        [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🧣 Developer", url="https://t.me/staystrongbros")],
-    ])
 
+    await asyncio.sleep(1)
     await start_message.edit_text(
-        f" 🎉 Welcome {m.from_user.first_name} to DRM Bot! 🎉\n\n"
-        f"**You are currently using the free version.** 🆓\n\n"
-        f"<blockquote expandable>I'm here to make your life easier by downloading videos from your **.txt** file 📄 and uploading them directly to Telegram!</blockquote>\n\n"
-        f"**Want to get started? Press /id**\n\n"
-        f"💬 Contact : [{CREDIT}⁬](tg://openmessage?user_id={OWNER}) to Get The Subscription 🎫 and unlock the full potential of your new bot! 🔓\n",
-        disable_web_page_preview=True,
-        reply_markup=keyboard
+        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
+        f"Initializing Uploader bot... 🤖\n\n"
+        f"Progress: [⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️] 0%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await start_message.edit_text(
+        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
+        f"Loading features... ⏳\n\n"
+        f"Progress: [🟥🟥🟥⬜️⬜️⬜️⬜️⬜️⬜️⬜️] 25%\n\n"
+    )
+    
+    await asyncio.sleep(1)
+    await start_message.edit_text(
+        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
+        f"This may take a moment, sit back and relax! 😊\n\n"
+        f"Progress: [🟧🟧🟧🟧🟧⬜️⬜️⬜️⬜️⬜️] 50%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    await start_message.edit_text(
+        f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
+        f"Checking subscription status... 🔍\n\n"
+        f"Progress: [🟨🟨🟨🟨🟨🟨🟨🟨⬜️⬜️] 75%\n\n"
+    )
+
+    await asyncio.sleep(1)
+    if m.chat.id in AUTH_USERS:
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("💎 Features", callback_data="feat_command"), InlineKeyboardButton("🖱️Commands", callback_data="cmd_command")],
+            [InlineKeyboardButton("💳 Plans", callback_data="upgrade_command")],
+            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Repo", url="https://github.com/nikhilsainiop/saini-txt-direct")],
+        ])
+        
+        await start_message.edit_text(
+            f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
+            f"Great! You are a premium member!\n"
+            f"Use button : **🖱️ Commands** to get started 🌟\n\n"
+            f"If you face any problem contact -  [{CREDIT}⁬](tg://openmessage?user_id={OWNER})\n", disable_web_page_preview=True, reply_markup=keyboard
+        )
+    else:
+        await asyncio.sleep(2)
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("💎 Features", callback_data="feat_command"), InlineKeyboardButton("🖱️Commands", callback_data="cmd_command")],
+            [InlineKeyboardButton("💳 Plans", callback_data="upgrade_command")],
+            [InlineKeyboardButton(text="📞 Contact", url=f"tg://openmessage?user_id={OWNER}"), InlineKeyboardButton(text="🛠️ Repo", url="https://github.com/nikhilsainiop/saini-txt-direct")],
+        ])
+        await start_message.edit_text(
+           f" 🎉 Welcome {m.from_user.first_name} to DRM Bot! 🎉\n\n"
+           f"**You are currently using the free version.** 🆓\n\n<blockquote expandable>I'm here to make your life easier by downloading videos from your **.txt** file 📄 and uploading them directly to Telegram!</blockquote>\n\n**Want to get started? Press /id**\n\n💬 Contact : [{CREDIT}⁬](tg://openmessage?user_id={OWNER}) to Get The Subscription 🎫 and unlock the full potential of your new bot! 🔓\n", disable_web_page_preview=True, reply_markup=keyboard
     )
 @bot.on_callback_query(filters.regex("back_to_main_menu"))
 async def back_to_main_menu(client, callback_query):
